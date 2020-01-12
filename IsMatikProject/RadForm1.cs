@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IsMatikProject.Gateways;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,20 @@ namespace IsMatikProject
         public RadForm1()
         {
             InitializeComponent();
+        }
+
+        private void radGridView1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            string keyWord = KeywordTextBox.Text;
+
+            ProductsListing productsListing = new ProductsListing();
+            productsListing.SearchForProducts(keyWord, "https://www.n11.com/");
+
         }
     }
 }
