@@ -1,4 +1,5 @@
-﻿using IsMatikProject.Gateways;
+﻿using Domain.Entities;
+using IsMatikProject.Gateways;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,9 +28,12 @@ namespace IsMatikProject
         private void SearchButton_Click(object sender, EventArgs e)
         {
             string keyWord = KeywordTextBox.Text;
-
+            
             ProductsListing productsListing = new ProductsListing();
-            productsListing.SearchForProducts(keyWord, CarrefourSACheckBox.Tag.ToString());
+            List<ProductDetails> searchResult = productsListing.SearchForProducts(keyWord, CarrefourSACheckBox.Tag.ToString());
+
+            ProductRepository productRepository = new ProductRepository();
+            productRepository.SaveSearchResultToDB(searchResult);
 
         }
     }

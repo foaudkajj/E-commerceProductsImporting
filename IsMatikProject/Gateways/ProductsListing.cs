@@ -16,9 +16,9 @@ namespace IsMatikProject.Gateways
     {
         public List<ProductDetails> SearchForProducts(string keyword, string website)
         {
+            List<ProductDetails> products = new List<ProductDetails>();
             using (IWebDriver driver = new ChromeDriver())
-            {
-                List<ProductDetails> products = new List<ProductDetails>();
+            { 
                 WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
                 driver.Navigate().GoToUrl(website);
 
