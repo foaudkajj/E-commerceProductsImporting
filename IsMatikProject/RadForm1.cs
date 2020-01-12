@@ -29,7 +29,7 @@ namespace IsMatikProject
             string keyWord = KeywordTextBox.Text;
 
             ProductsListing productsListing = new ProductsListing();
-            productsListing.SearchForProducts(keyWord, "https://www.n11.com/");
+            productsListing.SearchForProducts(keyWord, CarrefourSACheckBox.Tag.ToString());
 
         }
     }
