@@ -53,7 +53,7 @@
             // 
             this.radGridView1.AutoSizeRows = true;
             this.radGridView1.EnableCustomFiltering = true;
-            this.radGridView1.Font = new System.Drawing.Font("Rockwell", 8.25F);
+            this.radGridView1.Font = new System.Drawing.Font("Rockwell", 15F);
             this.radGridView1.Location = new System.Drawing.Point(34, 12);
             // 
             // 
@@ -76,11 +76,12 @@
             // 
             // KeywordTextBox
             // 
+            this.KeywordTextBox.Font = new System.Drawing.Font("Rockwell", 15F);
             this.KeywordTextBox.Location = new System.Drawing.Point(6, 32);
             this.KeywordTextBox.Name = "KeywordTextBox";
             this.KeywordTextBox.NullText = "Aranacak Ürün";
             this.KeywordTextBox.ShowNullText = true;
-            this.KeywordTextBox.Size = new System.Drawing.Size(129, 27);
+            this.KeywordTextBox.Size = new System.Drawing.Size(129, 29);
             this.KeywordTextBox.TabIndex = 1;
             this.KeywordTextBox.TextChanged += new System.EventHandler(this.KeywordTextBox_TextChanged);
             this.KeywordTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeywordTextBox_KeyDown);
@@ -171,6 +172,7 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RadForm1";
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).EndInit();
