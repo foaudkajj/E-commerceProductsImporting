@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace Domain.Interfaces
 {
-    public interface IProductsListing
+    public interface IEFProductRepository
     {
-        List<ProductDetails> SearchForProducts(string keyword,string website);
+        void SaveSearchResultToDB(List<ProductDetails> productDetails);
+        List<ProductDetails> GetProductsByKeyword(string keyword);
     }
 }

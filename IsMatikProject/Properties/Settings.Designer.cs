@@ -34,5 +34,16 @@ namespace IsMatikProject.Properties {
                 this["N11"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-U4VEMH7;Initial Catalog=IsMatikProject;Integrated Security=Tr" +
+            "ue")]
+        public string IsMatikProjectConnectionString {
+            get {
+                return ((string)(this["IsMatikProjectConnectionString"]));
+            }
+        }
     }
 }

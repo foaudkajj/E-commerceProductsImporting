@@ -8,17 +8,27 @@ using System.Threading.Tasks;
 
 namespace Domain.UseCases
 {
-    class ListingProductsInteractor
+    public class ListingProductsInteractor
     {
-        private readonly IProductsListing _productsListing;
-
-        public ListingProductsInteractor(IProductsListing productsListing)
+        private readonly IGettingProductsFromWebsite _productsGettingFromWebsite;
+        private readonly IEFProductRepository _productRepository;
+        public ListingProductsInteractor(IGettingProductsFromWebsite productsGettingFromWebsite, IEFProductRepository productRepository)
         {
-            _productsListing = productsListing;
+            _productsGettingFromWebsite = productsGettingFromWebsite;
+            _productRepository = productRepository;
         }
         public List<ProductDetails> ListProducts(string keyword, string website)
         {
-            return _productsListing.SearchForProducts(keyword, website);
+            return _productsGettingFromWebsite.SearchForProducts(keyword, website);
+        }
+
+        public void SaveSearchResultToDB(List<ProductDetails> productDetails)
+        {
+            _productRepository.SaveSearchResultToDB(productDetails);
+        }
+        public List<ProductDetails> GetProductsByKeyword(string keyword)
+        {
+            return _productRepository.GetProductsByKeyword(keyword);
         }
     }
 }
